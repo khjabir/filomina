@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# filomina: runtime data (audit log, uploaded photos, face index)
+/data/
+
+# face models (npm run fetch-models)
+/models/

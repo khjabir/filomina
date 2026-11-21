@@ -1,26 +1,43 @@
 {
-  "name": "lumina-photo-finder",
+  "name": "filomina-photo-finder",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check-env": "node scripts/check-env.mjs",
+    "fetch-models": "node scripts/fetch-models.mjs",
+    "make-icons": "node scripts/make-icons.mjs",
+    "upload-models": "node scripts/upload-models.mjs"
   },
   "dependencies": {
+    "@libsql/client": "^0.18.0",
+    "clsx": "^2.1.1",
+    "jose": "^6.2.13",
+    "lucide-react": "^1.60.0",
+    "motion": "^14.4.0",
     "next": "16.4.2",
+    "onnxruntime-node": "^1.30.0",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
+    "@fontsource/nunito": "^5.3.0",
     "@tailwindcss/turbopack": "^4",
-    "@types/node": "^20",
+    "@types/node": "^24.19.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vercel/blob": "^2.8.2",
     "eslint": "^9",
     "eslint-config-next": "16.4.2",
+    "fontkit": "^2.0.4",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.19"
   }
 }
