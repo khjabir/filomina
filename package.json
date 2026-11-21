@@ -9,8 +9,9 @@
     "lint": "eslint",
     "check-env": "node scripts/check-env.mjs",
     "fetch-models": "node scripts/fetch-models.mjs",
-    "make-icons": "node scripts/make-icons.mjs",
-    "upload-models": "node scripts/upload-models.mjs"
+    "upload-models": "node scripts/upload-models.mjs",
+    "make-wordmark": "node scripts/make-wordmark.mjs",
+    "make-brand": "node scripts/make-brand.mjs"
   },
   "dependencies": {
     "@libsql/client": "^0.18.0",
@@ -18,7 +19,7 @@
     "jose": "^6.2.13",
     "lucide-react": "^1.60.0",
     "motion": "^14.4.0",
-    "next": "16.4.2",
+    "next": "^16.4.6",
     "onnxruntime-node": "^1.30.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
@@ -32,7 +33,7 @@
     "@types/react-dom": "^19",
     "@vercel/blob": "^2.8.2",
     "eslint": "^9",
-    "eslint-config-next": "16.4.2",
+    "eslint-config-next": "^16.4.6",
     "fontkit": "^2.0.4",
     "tailwindcss": "^4",
     "typescript": "^5"

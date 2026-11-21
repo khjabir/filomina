@@ -23,13 +23,16 @@ let cachedKey: Uint8Array | null = null;
 let warned = false;
 
 function secret() {
-  if (!env.sessionSecret && !warned) {
-    warned = true;
-    console.warn(
-      "[filomina] SESSION_SECRET is not set – using an insecure development fallback. Set it in .env.local.",
-    );
+  if (env.sessionSecret) return env.sessionSecret;
+  // The fallback below is public (it is in the source code), so it must never protect real data.
+  if (env.isProd) {
+    throw new Error("SESSION_SECRET is not set. It encrypts sign-in sessions and stored Google tokens; generate one with: openssl rand -base64 32");
   }
-  return env.sessionSecret || "filomina-dev-insecure-secret-change-me";
+  if (!warned) {
+    warned = true;
+    console.warn("[filomina] SESSION_SECRET is not set – using an insecure development fallback. Set it in .env.local.");
+  }
+  return "filomina-dev-insecure-secret-change-me";
 }
 
 function key() {

@@ -108,7 +108,7 @@ cd filomina
 or copy the project folder from your computer (from your Mac, excluding node_modules):
 
 ```bash
-rsync -av --exclude node_modules --exclude .next --exclude data --exclude models ./lumina-photo-finder/ ubuntu@<PUBLIC_IP>:~/filomina/ -e "ssh -i ~/Downloads/ssh-key-*.key"
+rsync -av --exclude node_modules --exclude .next --exclude data --exclude models ./filomina/ ubuntu@<PUBLIC_IP>:~/filomina/ -e "ssh -i ~/Downloads/ssh-key-*.key"
 ```
 
 `models/` is not needed on the VM: the Docker build downloads the models (about 280 MB) once. If you prefer, copy the `models` folder too and the build will reuse it.
@@ -128,7 +128,7 @@ Fill in (the rest can stay as in the example):
 | `APP_URL` | `https://photos.example.com` |
 | `SESSION_SECRET` | output of `openssl rand -base64 32` |
 | `AUDIT_ADMIN_KEY` | output of `openssl rand -hex 24` – this unlocks the admin area |
-| `ADMIN_PATH` | `manage-` + output of `openssl rand -hex 8`, e.g. `manage-3f9ac1d27b40e5aa` – your secret admin URL |
+| `ADMIN_PATH` | `manage-` followed by the output of `openssl rand -hex 8` – your secret admin URL |
 | `GOOGLE_API_KEY`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | from your Google Cloud project (SETUP.md sections 1–3) |
 | `DRIVE_ROOT_FOLDER_ID` | optional default folder for the landing page |
 | `APP_OPERATOR_NAME`, `PRIVACY_CONTACT_EMAIL` | shown in the privacy policy |
